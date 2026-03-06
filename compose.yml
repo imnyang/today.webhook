@@ -1,17 +1,8 @@
 services:
   app:
-    image: ghcr.io/imnynag/today.webhook:latest
+    image: ghcr.io/imnyang/today.webhook:latest
     restart: unless-stopped
     env_file:
       - .env
     volumes:
       - ./logs:/code/app/temp/logs
-    networks:
-      hikari:
-
-networks:
-  hikari:
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.30.0.0/16
