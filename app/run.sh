@@ -1,0 +1,3 @@
+cd /code/app
+
+./run
