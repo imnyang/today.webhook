@@ -8,7 +8,7 @@ async function main() {
   const YYMMDD = tomorrow.toISOString().slice(0, 10).replace(/-/g, "").toString();
   // const YYMMDD = "20250306";
   const weekday = tomorrow.getDay() === 0 ? 6 : tomorrow.getDay() - 1;
-  // const weekday = 4;
+  // const weekday = 2;
 
   console.log("📅 | date:", YYMMDD);
   console.log("📅 | weekday:", weekday);
@@ -17,7 +17,7 @@ async function main() {
     schoolId: 41896,
     grade: 1,
     classNum: 1,
-    weekday: Weekday.Friday,
+    weekday: weekday,
     WEBHOOK_URL: process.env.DISCORD_WEBHOOK_SUNRIN_URL as string
   })
   await Meal({

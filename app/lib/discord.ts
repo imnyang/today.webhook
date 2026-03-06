@@ -1,4 +1,4 @@
-import getTimetable from "./comcigan";
+import { getTimetable, room } from "./comcigan";
 import { getMealInfo, NameToEmoji, removeNutritionInfo } from "./meal";
 
 export async function Meal({ MLSV_YMD, ATPT_OFCDC_SC_CODE, SD_SCHUL_CODE, username, schoolName, WEBHOOK_URL }: { MLSV_YMD: string, ATPT_OFCDC_SC_CODE: string, SD_SCHUL_CODE: string, username: string, schoolName: string, WEBHOOK_URL: string }) {
@@ -50,7 +50,7 @@ export async function Timetable({ schoolId, grade, classNum, weekday, WEBHOOK_UR
         title: `🏫 | 학교 : 선린인터넷고등학교`,
         fields: (timetableInfo ?? []).map((item) => ({
           name: `${item.subject}${item.changed ? (" *") : ""}`,
-          value: item.teacher,
+          value: `${item.teacher}${item.subject in room ? ` | ${room[item.subject as keyof typeof room]}` : ""}`,
           inline: false,
         })),
         footer: {
