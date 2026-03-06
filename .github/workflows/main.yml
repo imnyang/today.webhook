@@ -4,7 +4,7 @@ on:
       - main
   workflow_dispatch:
 
-name: Web Build
+name: Docker Build
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,5 +31,5 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: |
-            ghcr.io/imnyang/today.sunrin:latest
-            ghcr.io/imnyang/today.sunrin:${{ github.run_id }}
+            ghcr.io/imnyang/today.webhook:latest
+            ghcr.io/imnyang/today.webhook:${{ github.run_id }}

@@ -3,7 +3,6 @@ LABEL maintainer="@imnya"
 
 # Set the working directory
 COPY app /code/app
-COPY .env /code/app/.env
 
 RUN chmod +x /code/app/run.sh
 
@@ -25,7 +24,6 @@ RUN mkdir -p /code/app
 
 # Copy the built files from the build stage
 COPY --from=build /code/app/run /code/app/run
-COPY --from=build /code/app/.env /code/app/.env
 COPY --from=build /code/app/run.sh /code/app/run.sh
 
 RUN mkdir -p /code/app/temp
