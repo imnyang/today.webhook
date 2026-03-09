@@ -6,7 +6,7 @@ async function main() {
   const today = new Date();
   const YYMMDD = today.toISOString().slice(0, 10).replace(/-/g, "").toString();
   // const YYMMDD = "20250306";
-  const weekday = today.getDay() === 0 ? 6 : tomorrow.getDay() - 1;
+  const weekday = today.getDay() === 0 ? 6 : today.getDay() - 1;
   // const weekday = 2;
 
   console.log("📅 | date:", YYMMDD);
