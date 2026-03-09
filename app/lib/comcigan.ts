@@ -1,4 +1,4 @@
-import Comcigan, { School, Weekday } from '@imnyang/comcigan.ts'
+import Comcigan from '@imnyang/comcigan.ts'
 
 const comcigan = new Comcigan()
 
