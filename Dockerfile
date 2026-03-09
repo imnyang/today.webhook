@@ -12,22 +12,6 @@ RUN mkdir -p /code/app/temp
 # Install dependencies
 RUN bun install
 
-# Build the project
-RUN bun build index.ts --compile --minify --sourcemap --target bun --outfile ./run
-
-FROM oven/bun:alpine AS runner
-LABEL maintainer="@imnya"
-
-# Set the working directory
-WORKDIR /code
-RUN mkdir -p /code/app
-
-# Copy the built files from the build stage
-COPY --from=build /code/app/run /code/app/run
-COPY --from=build /code/app/run.sh /code/app/run.sh
-
-RUN mkdir -p /code/app/temp
-
 # Set timezone to Asia/Seoul
 RUN apk add --no-cache tzdata \
     && cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime \

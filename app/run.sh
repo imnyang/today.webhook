@@ -1,3 +1,3 @@
 cd /code/app
 
-./run
+bun run ./index.ts
