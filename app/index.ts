@@ -16,7 +16,7 @@ async function main() {
     schoolId: 41896,
     grade: 1,
     classNum: 1,
-    weekday: weekday,
+    weekday: weekday + 1,
     WEBHOOK_URL: process.env.DISCORD_WEBHOOK_SUNRIN_URL as string
   })
   await Meal({
@@ -32,8 +32,8 @@ async function main() {
   console.timeLog("⏱️ | sangjeong");
   await Meal({
     MLSV_YMD: YYMMDD,
-    ATPT_OFCDC_SC_CODE: "B10",
-    SD_SCHUL_CODE: "7010536",
+    ATPT_OFCDC_SC_CODE: "E10",
+    SD_SCHUL_CODE: "7310342",
     username: "@today.isangjeong",
     schoolName: "상정고등학교",
     WEBHOOK_URL: process.env.DISCORD_WEBHOOK_SANGJEONG_URL as string
