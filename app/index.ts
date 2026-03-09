@@ -3,11 +3,10 @@ import { Meal, Timetable } from "./lib/discord";
 
 async function main() {
   // Tomorrow is 1st of the month
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  const YYMMDD = tomorrow.toISOString().slice(0, 10).replace(/-/g, "").toString();
+  const today = new Date();
+  const YYMMDD = today.toISOString().slice(0, 10).replace(/-/g, "").toString();
   // const YYMMDD = "20250306";
-  const weekday = tomorrow.getDay() === 0 ? 6 : tomorrow.getDay() - 1;
+  const weekday = today.getDay() === 0 ? 6 : tomorrow.getDay() - 1;
   // const weekday = 2;
 
   console.log("📅 | date:", YYMMDD);
