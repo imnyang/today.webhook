@@ -3,11 +3,17 @@ import { Meal, Timetable } from "./lib/discord";
 
 async function main() {
   // Tomorrow is 1st of the month
-  const today = new Date();
-  const YYMMDD = today.toISOString().slice(0, 10).replace(/-/g, "").toString();
-  // const YYMMDD = "20250306";
-  const weekday = today.getDay() === 0 ? 6 : today.getDay() - 1;
-  // const weekday = 2;
+  // 한국 시간 기준으로 날짜 객체 생성
+  const now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Seoul" }));
+  
+  const YYYY = now.getFullYear();
+  const MM = String(now.getMonth() + 1).padStart(2, '0');
+  const DD = String(now.getDate()).padStart(2, '0');
+  const YYMMDD = `${YYYY}${MM}${DD}`;
+  
+  // getDay(): 일(0) ~ 토(6)
+  // comcigan.ts 라이브러리 기준에 맞춰 weekday 설정 필요
+  const weekday = now.getDay();
 
   console.log("📅 | date:", YYMMDD);
   console.log("📅 | weekday:", weekday);
