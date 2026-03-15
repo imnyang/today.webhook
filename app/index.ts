@@ -22,7 +22,7 @@ async function main() {
     schoolId: 41896,
     grade: 1,
     classNum: 1,
-    weekday: weekday + 1,
+    weekday: weekday,
     WEBHOOK_URL: process.env.DISCORD_WEBHOOK_SUNRIN_URL as string
   })
   await Meal({
