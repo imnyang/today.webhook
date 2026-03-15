@@ -21,7 +21,7 @@ async function main() {
   await Timetable({
     schoolId: 41896,
     grade: 1,
-    classNum: 0,
+    classNum: 1,
     weekday: weekday + 1,
     WEBHOOK_URL: process.env.DISCORD_WEBHOOK_SUNRIN_URL as string
   })
